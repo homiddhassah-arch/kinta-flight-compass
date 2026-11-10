@@ -10,4 +10,10 @@ describe("demo flight tracking number", () => {
   it("does not accept another number", () => {
     expect(isValidDemoTrackingNumber("fh3948598015")).toBe(false);
   });
+
+  it("rejects empty and partial numbers", () => {
+    expect(isValidDemoTrackingNumber("")).toBe(false);
+    expect(isValidDemoTrackingNumber("fh394859801")).toBe(false);
+    expect(isValidDemoTrackingNumber("fh3948598014x")).toBe(false);
+  });
 });
